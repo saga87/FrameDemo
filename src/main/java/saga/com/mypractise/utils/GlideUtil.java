@@ -37,7 +37,13 @@ public class GlideUtil {
                 .into(imageView);
     }
 
-
+    public static void getDefaultIconBitmap(int url, ImageView imageView) {
+        Glide.with(MyApplication.getApplication()).load(url)
+                .error(R.drawable.error)
+                .skipMemoryCache(false)
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                .into(imageView);
+    }
 
 
 

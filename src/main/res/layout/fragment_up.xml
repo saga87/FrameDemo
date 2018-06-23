@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="saga.com.mypractise.view.fragment.UpFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="saga.com.mypractise.view.fragment.UpFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,8 +15,57 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:gravity="center"
-            android:text="上传"
-            android:textSize="18sp"/>
+            android:text="发布"
+            android:textSize="18sp" />
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/up_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:hint="这一刻的想法..."
+        android:padding="10dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/up_pics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="发布" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="取消" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
 
 </LinearLayout>

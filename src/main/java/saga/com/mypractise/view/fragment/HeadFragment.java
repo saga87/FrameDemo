@@ -28,7 +28,7 @@ import saga.com.mypractise.view.adapter.NewsListAdapter;
 import saga.com.mypractise.view.iview.IheadView;
 
 /**
- * A simple {@link Fragment} subclass.
+ * 首页展示新闻列表
  */
 public class HeadFragment extends Fragment implements IheadView {
     @BindView(R.id.recyclerview_head)

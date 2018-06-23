@@ -10,7 +10,6 @@
         android:layout_height="50dp"
         android:background="#3f91d2"
         android:gravity="center">
-
         <TextView
             android:layout_width="50dp"
             android:layout_height="30dp"
@@ -18,5 +17,18 @@
             android:text="圈子"
             android:textSize="18sp"/>
     </LinearLayout>
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/refresh_post"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
 
 </LinearLayout>
