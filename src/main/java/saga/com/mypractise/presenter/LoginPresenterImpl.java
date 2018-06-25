@@ -47,7 +47,7 @@ public class LoginPresenterImpl implements ILoginPresenter {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Log.e("login onResponse","========="+response);
+//                Log.e("login onResponse","========="+response);
                 String htmlStr = null;
                 try {
                     htmlStr = response.body().string();
