@@ -1,6 +1,5 @@
 package saga.com.mypractise.retrofit;
 
-import android.util.Log;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,7 +25,7 @@ public class RetrofitFactory {
                 .addInterceptor(new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
                     @Override
                     public void log(String message) {
-                        Log.e(TAG, "log: " + message);
+//                        Log.e(TAG, "log: " + message);
                     }
                 }).setLevel(HttpLoggingInterceptor.Level.BASIC))
                 .build();

@@ -83,7 +83,7 @@ public class UpFragment extends TakePhotoFragment {
     private Uri imageUri;  //图片保存路径
     private List<Bitmap> pics = new ArrayList<>();
     private List<String> urls = new ArrayList<>();
-    private  List<String> orderurl = new ArrayList<>();
+    private List<String> orderurl = new ArrayList<>();
 
     public UpFragment() {
         // Required empty public constructor
@@ -207,14 +207,14 @@ public class UpFragment extends TakePhotoFragment {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(Success s) {
-        if (s.isSuccess()){
+        if (s.isSuccess()) {
             upContent.setText("");
             urls.clear();
             pics.clear();
             pics.add(BitmapFactory.decodeResource(getResources(), R.drawable.photo));
             adapter.replaceData(pics);
             Util.showToast("发布成功");
-        }else{
+        } else {
             Util.showToast(s.getMsg());
         }
     }
@@ -245,12 +245,12 @@ public class UpFragment extends TakePhotoFragment {
     public void takeSuccess(TResult result) {
         super.takeSuccess(result);
         String iconPath = result.getImage().getOriginalPath();
-        String tpath = Environment.getExternalStorageDirectory()+"/temp_practise_ys/" + System.currentTimeMillis() + ".jpg";
-        String compressPath =  PictureUtil.compressImage(iconPath,tpath,40);
+        String tpath = Environment.getExternalStorageDirectory() + "/temp_practise_ys/" + System.currentTimeMillis() + ".jpg";
+        String compressPath = PictureUtil.compressImage(iconPath, tpath, 40);
         if (urls.size() < 10) {
             urls.add(0, compressPath);
             pics.clear();
-            for(String s:converse(urls)){
+            for (String s : converse(urls)) {
                 pics.add(BitmapFactory.decodeFile(s));
             }
             pics.add(BitmapFactory.decodeResource(getResources(), R.drawable.photo));
@@ -267,8 +267,8 @@ public class UpFragment extends TakePhotoFragment {
 
     private List<String> converse(List<String> urls) {
         orderurl.clear();
-        for(int i = 0;i<urls.size();i++){
-            orderurl.add(0,urls.get(i));
+        for (int i = 0; i < urls.size(); i++) {
+            orderurl.add(0, urls.get(i));
         }
         return orderurl;
     }

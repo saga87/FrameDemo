@@ -51,12 +51,12 @@ public class MainActivity extends BaseActivity {
     }
 
     private void applyPermission() {
-        if (AndPermission.hasPermission(this,Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+        if (AndPermission.hasPermission(this, Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             //有权限不再申请
-        }else{
+        } else {
             AndPermission.with(this)
                     .requestCode(100)
-                    .permission(Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    .permission(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     .send();
         }
     }
@@ -72,11 +72,12 @@ public class MainActivity extends BaseActivity {
         @Override
         public void onSucceed(int requestCode, List<String> grantedPermissions) {
             // 权限申请成功回调。
-            if(requestCode == 100) {
+            if (requestCode == 100) {
                 // TODO 相应代码。
                 //do nothing
             }
         }
+
         @Override
         public void onFailed(int requestCode, List<String> deniedPermissions) {
             // 权限申请失败回调。
@@ -103,7 +104,7 @@ public class MainActivity extends BaseActivity {
         vp.setOffscreenPageLimit(4);
     }
 
-    private class MyAdapter extends FragmentPagerAdapter{
+    private class MyAdapter extends FragmentPagerAdapter {
 
         public MyAdapter(FragmentManager fm) {
             super(fm);
@@ -124,9 +125,9 @@ public class MainActivity extends BaseActivity {
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int id) {
-                switch (id){
+                switch (id) {
                     case R.id.rb_fp:
-                       vp.setCurrentItem(0);
+                        vp.setCurrentItem(0);
                         break;
                     case R.id.rb_up:
                         vp.setCurrentItem(1);
@@ -149,7 +150,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         rbFp.setChecked(true);
                         rbFp.setTextColor(Color.parseColor("#ac1234"));

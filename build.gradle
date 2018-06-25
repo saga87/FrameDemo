@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao' // apply plugin
 repositories {
     maven { url "https://jitpack.io" }
 }
@@ -47,4 +47,6 @@ dependencies {
     compile 'com.jph.takephoto:takephoto_library:4.0.3'
 
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+    implementation 'org.greenrobot:greendao:3.2.2' // add library
 }

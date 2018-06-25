@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
-import com.lcodecore.tkrefreshlayout.header.progresslayout.ProgressLayout;
 
 import java.util.List;
 
@@ -75,10 +74,10 @@ public class HeadFragment extends Fragment implements IheadView {
         list = (NewsList) object;
         if (flag) {
             setRecyclerAdapter(list.getList());
-        }else{
-            if(page == 1) {
+        } else {
+            if (page == 1) {
                 adapter.replaceData(list.getList());
-            }else{
+            } else {
                 adapter.addData(list.getList());
             }
         }
